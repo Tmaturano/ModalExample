@@ -1,0 +1,38 @@
+﻿@model ModalExample.Models.Supplier
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Supplier</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+
+    <h3>Products</h3>
+    @if (Model.Products.Count() > 0)
+    {
+    <ul>
+        @foreach (var item in Model.Products)
+        {
+            <li>@item.Name</li>
+        }
+    </ul>
+    }
+    else
+    {
+        <p>No product found</p>
+    }
+
+</div>
